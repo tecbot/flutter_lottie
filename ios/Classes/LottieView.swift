@@ -49,7 +49,8 @@ public class LottieView : NSObject, FlutterPlatformView {
             self.animationView = LOTAnimationView(filePath: path!)
          }
          self.animationView?.frame = self.frame
-         self.animationView?.contentMode = .scaleAspectFill
+         self.animationView?.contentMode = .scaleAspectFit
+         self.animationView?.clipsToBounds = true
          
          let loop = argsDict["loop"] as? Bool ?? false
          let reverse = argsDict["reverse"] as? Bool ?? false
